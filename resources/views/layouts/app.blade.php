@@ -37,6 +37,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <!-- Search form -->
+                        <form class="navbar-search navbar-search-light d-flex align-items-center me-sm-3" id="navbar-search-main">
+                        <div class="input-group input-group-alternative">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            <input class="form-control" placeholder="Search" type="text" />
+                        </div>
+                        <button type="button" class="btn btn-close ms-2" data-action="search-close" data-target="#navbar-search-main" aria-label="Close"></button>
+                        </form>
 
                     </ul>
 

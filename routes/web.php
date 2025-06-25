@@ -13,10 +13,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
     //user
     Route::resource('/users', UserController::class)->only(['index', 'show', 'edit', 'update']);
 

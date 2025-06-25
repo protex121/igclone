@@ -16,6 +16,8 @@ class Post extends Model implements HasMedia
 {
     use HasFactory, HasComments, InteractsWithMedia, Likeable;
 
+    public const PAGINATE_COUNT = 10;
+
     protected $fillable = [
         'user_id',
         'slug',
