@@ -9,7 +9,7 @@
 <div class="card-body p-0 {{ request()->routeIs('posts.index') ? '' : 'overflow-hidden rounded-bottom' }}">
     <ul class="list-group list-group-flush" id="commentList-{{ $post->slug }}">
         @forelse($post->comments as $comment)
-            @include('comments._single-comment')
+            @include('comments.single-comment')
         @empty
         @endforelse
     </ul>

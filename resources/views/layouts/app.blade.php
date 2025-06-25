@@ -15,10 +15,13 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> --}}
 
     <!-- Font Awesome 5 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
+
+    {{-- jquery --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -80,5 +83,22 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        window.user = {
+            isLoggedIn: {{ json_encode(auth()->check()) }},
+            commentAppend: {{ json_encode(request()->routeIs('posts.index')) }},
+            currentPageRouteName: "{{ Route::currentRouteName() }}",
+            currentPageUrl: "{{ Route::currentRouteName() }}",
+            notification:
+            @if (session('message'))
+                @json([
+                    "type" => session('status'),
+                    "message" => session('message')
+                ])
+            @else
+                null
+            @endif
+        }
+    </script>
 </body>
 </html>
