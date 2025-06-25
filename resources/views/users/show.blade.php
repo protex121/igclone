@@ -12,11 +12,11 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex">
                         <div>
-                            <div class="text-lg font-weight-bold">{{ $user->username }}</div>
+                            <div class="fs-4 fw-bolder">{{ $user->username }}</div>
                         </div>
 
                         @if(auth()->user()->username != $user->username)
-                            <button class="btn btn-sm btn-primary ml-4" id="followUnfollowButton"
+                            <button class="btn btn-sm btn-primary ms-4" id="followUnfollowButton"
                                     data-username="{{ $user->username }}">
                                 {{ $user->followed_at ? __('Unfollow') : __('Follow') }}
                             </button>
@@ -83,6 +83,7 @@
             </div>
         </div>
 
+        <hr>
         <div class="row pt-5 mx-auto">
             @forelse($user->posts as $post)
                 @include('posts.single-post')

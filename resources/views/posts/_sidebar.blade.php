@@ -1,4 +1,4 @@
-<div class="col-md-4 d-md-block order-2">
+<div class="col-md-4 d-md-block order-2" style="z-index: 0;">
     <div class="card sticky-top laragram-sidebar">
         <div class="card-header">
             <div class="d-flex align-items-center justify-content-between">

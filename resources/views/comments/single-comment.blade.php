@@ -15,7 +15,7 @@
                 {{ $comment->created_at->diffForHumans() }}
             </small>
             @if($comment->user_id == auth()->id())
-                <div class="custom-control custom-checkbox custom-checkbox-success d-none d-md-block">
+                <div class="custom-control custom-checkbox custom-checkbox-success d-none d-md-block ms-1">
                     <button class="commentDeleteButton btn btn-danger btn-sm"
                             data-comment-id="{{ $comment->id }}" title="Delete">
                         <i class="fas fa-trash"></i>
