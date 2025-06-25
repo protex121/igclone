@@ -37,15 +37,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <!-- Search form -->
-                        <form action="{{ route('user.search') }}" method="POST" class="navbar-search navbar-search-light d-flex align-items-center me-sm-3" id="navbar-search-main">
-                            @csrf
-                            <div class="input-group input-group-alternative">
-                                <span class="input-group-text"><i class="fas fa-search"></i></span>
-                                <input class="form-control" placeholder="Search" type="text" name="username" />
-                            </div>
-                        </form>
-
+                        @auth
+                            <!-- Search form -->
+                            <form action="{{ route('user.search') }}" method="POST" class="navbar-search navbar-search-light d-flex align-items-center me-sm-3" id="navbar-search-main">
+                                @csrf
+                                <div class="input-group input-group-alternative">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    <input class="form-control" placeholder="Search" type="text" name="username" />
+                                </div>
+                            </form>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
