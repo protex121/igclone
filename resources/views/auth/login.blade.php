@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-8">s</div>
+                        <div class="col-8"></div>
                         <div class="col-4">
                             <img src="https://assets.turbologo.com/blog/en/2019/09/19084953/instagram-logo-illustration-958x575.png" style="width: 24vw;"/>
                             <form method="POST" action="{{ route('login') }}">

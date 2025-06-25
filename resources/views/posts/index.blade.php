@@ -3,12 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 order-1">
+            <div class="col-8 order-1">
                 <div class="infinite-scroll">
                     @forelse($posts as $post)
                         <div class="row">
-                            <div class="col-md-10 mx-auto">
-                                <div class="card single-post">
+                            <div class="col-10 mx-auto">
+                                <div class="card single-post mb-3">
                                     <div
                                         class="card-header px-3 py-2 py-md-3 d-flex justify-content-between align-items-center">
                                         <div class="d-flex align-items-center">

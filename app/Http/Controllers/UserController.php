@@ -30,10 +30,13 @@ class UserController extends Controller
         return view('users.show', compact('user'));
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $user = User::where('username', $request->username)->first();
-        if($user){
-            return view('users.show', compact('user'));
+        if ($user) {
+            $user->loadCount(['posts', 'followers', 'followings']);
+            $user->load('posts.media');
+            return redirect()->route('users.show', ['user' => $user]);
         }
         return redirect()->route('users.index');
     }
