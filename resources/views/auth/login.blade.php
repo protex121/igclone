@@ -9,7 +9,9 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-8"></div>
+                        <div class="col-8 text-center">
+                            <img src="https://img.freepik.com/premium-vector/cute-flat-woman-points-her-finger-up-bulb-she-has-cool-idea-vector-people-have-business-idea-something_81863-5147.jpg?semt=ais_hybrid&w=740" style="width: 22vw">
+                        </div>
                         <div class="col-4">
                             <img src="https://assets.turbologo.com/blog/en/2019/09/19084953/instagram-logo-illustration-958x575.png" style="width: 24vw;"/>
                             <form method="POST" action="{{ route('login') }}">

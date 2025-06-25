@@ -86,4 +86,11 @@ class User extends Authenticatable implements HasMedia, Commentator
 
         return optional($this->getMedia('avatars')->last())->getUrl('thumb') ?? 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email))) . '?s=' . $imageSize;
     }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+            ->fit(Fit::Crop, 400, 400)
+            ->sharpen(10);
+    }
 }
