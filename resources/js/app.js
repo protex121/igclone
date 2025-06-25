@@ -69,7 +69,6 @@ $(function () {
         e.preventDefault();
 
         let postSlug = $(this).data('postSlug');
-        console.log(postSlug)
         let likeCount = $('#likeCount-' + postSlug);
         let _url = '/likes/' + postSlug;
         let _token = $('meta[name="csrf-token"]').attr('content');

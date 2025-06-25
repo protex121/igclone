@@ -43,8 +43,6 @@ class HomeController extends Controller
             ->take(10)
             ->get();
         
-        $suggestedPosts = [];
-        
-        return view('posts.index', compact('posts', 'suggestedUsers', 'suggestedPosts'));
+        return view('posts.index', compact('posts', 'suggestedUsers'));
     }
 }

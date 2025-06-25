@@ -3,12 +3,12 @@
         <div class="card-header">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center justify-content-between">
-                    <div class="mr-2">
+                    <div class="me-2">
                         <a href="{{ route('users.show', auth()->user()) }}"
                            data-pjax>
                             <img src="{{ auth()->user()->avatar }}"
-                                 class="avatar rounded-circle"
-                                 alt="{{ auth()->user()->username }}">
+                                 class="rounded-circle"
+                                 alt="{{ auth()->user()->username }}" style="max-width: 36px">
                         </a>
                     </div>
                     <div>
@@ -72,7 +72,7 @@
                     </li>
                 @empty
                     <div class="col">
-                        <h3 class="text-center text-muted">{{ __('No users to show!') }}</h3>
+                        <h6 class="text-center text-muted">{{ __('No users to show!') }}</h6>
                     </div>
                 @endforelse
             </ul>

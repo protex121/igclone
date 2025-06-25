@@ -24,7 +24,7 @@
                                                 <h4 class="mb-0">{{ $post->user->username }}</h4>
                                             </a>
                                         </div>
-
+                                        
                                         {{-- ellipsis trigger modal --}}
                                         <button type="button"
                                                 class="btn btn-outline-neutral btn-icon-only rounded-circle text-gray"
@@ -98,16 +98,14 @@
                                                    class="btn btn-link px-0 py-0">
                                                     {{ $post->user->username }}
                                                 </a>
-                                                <a class="text-sm text-muted text-center ml-2 mb-0"
-                                                   data-toggle="tooltip"
-                                                   data-placement="top"
+                                                <a class="text-sm text-muted text-center ms-2 mb-0"
+                                                   data-bs-toggle="tooltip"
+                                                   data-bs-placement="top"
                                                    title="{{ $post->created_at }}">
                                                     {{ $post->created_at->diffForHumans() }}
                                                 </a>
                                             </div>
-                                            {{-- <like-button post-slug="{{ $post->slug }}" :user="{{ auth()->user() }}" --}}
-                                            {{-- :likes="{{ $post->likers_count }}" --}}
-                                            {{-- like-status="{{ $post->isLikedBy(auth()->user()) }}"></like-button> --}}
+
                                             @include('likes.create')
                                         </div>
                                         <div class="d-flex justify-content-between align-items-baseline">
@@ -130,22 +128,18 @@
                             <div class="col-md-10 mx-auto">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h3 class="text-center text-muted mb-0">
+                                        <h5 class="text-center text-muted mb-0">
                                             {{ __('No posts yet!') }}
                                             <a href="{{ route('users.index') }}"
                                                data-pjax
                                                class="text-primary">
                                                 {{ __('Follow someone to see their photos!') }}
                                             </a>
-                                        </h3>
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <h3 class="text-center text-muted">{{ __('Posts you may like') }}</h3>
-
-                        @include('posts._suggested-posts', $suggestedPosts)
                     @endforelse
 
                     <div class="row">

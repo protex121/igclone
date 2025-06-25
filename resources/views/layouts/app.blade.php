@@ -38,12 +38,12 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <!-- Search form -->
-                        <form class="navbar-search navbar-search-light d-flex align-items-center me-sm-3" id="navbar-search-main">
-                        <div class="input-group input-group-alternative">
-                            <span class="input-group-text"><i class="fas fa-search"></i></span>
-                            <input class="form-control" placeholder="Search" type="text" />
-                        </div>
-                        <button type="button" class="btn btn-close ms-2" data-action="search-close" data-target="#navbar-search-main" aria-label="Close"></button>
+                        <form action="{{ route('user.search') }}" method="POST" class="navbar-search navbar-search-light d-flex align-items-center me-sm-3" id="navbar-search-main">
+                            @csrf
+                            <div class="input-group input-group-alternative">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                <input class="form-control" placeholder="Search" type="text" name="username" />
+                            </div>
                         </form>
 
                     </ul>
@@ -65,22 +65,29 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('users.show', auth()->user()) }}">Profile</a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li> <!-- Optional divider -->
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                    </li>
+                                </ul>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
+
                         @endguest
                     </ul>
                 </div>

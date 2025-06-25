@@ -10,7 +10,6 @@ class LikeController extends Controller
     public function toggle(Post $post): JsonResponse
     {
         auth()->user()->toggleLike($post);
-
         return response()->json([
             'data' => [
                 'likers_count' => $post->likers()->count(),

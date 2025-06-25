@@ -25,8 +25,8 @@
             </label>
             <div class="d-flex justify-content-end align-items-center">
                 <img alt="{{ auth()->user()->name }}"
-                     class="avatar avatar-sm rounded-circle mr-md-3 me-2"
-                     src="{{ auth()->user()->avatar }}">
+                     class="rounded-circle mr-md-3 me-2 mt-2"
+                     src="{{ auth()->user()->avatar }}" style="width: 24px;">
                 <textarea class="form-control commentTextarea"
                           id="comment-{{ $post->slug }}"
                           name="comment"

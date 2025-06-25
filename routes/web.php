@@ -36,4 +36,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
     Route::post('/post/store', [PostController::class, 'store'])->name('posts.store');
     Route::resource('/posts', PostController::class)->except(['index']);
+
+    // search
+    Route::post('/search', [UserController::class, 'search'])->name('user.search');
 });

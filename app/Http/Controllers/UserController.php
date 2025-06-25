@@ -29,4 +29,12 @@ class UserController extends Controller
         $user->load('posts.media');
         return view('users.show', compact('user'));
     }
+
+    public function search(Request $request){
+        $user = User::where('username', $request->username)->first();
+        if($user){
+            return view('users.show', compact('user'));
+        }
+        return redirect()->route('users.index');
+    }
 }

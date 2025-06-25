@@ -26,25 +26,15 @@ class FollowController extends Controller
         ]);
     }
 
-    /**
-     * @param  User  $user
-     * @return Application|Factory|View
-     */
     public function followings(User $user)
     {
         $users = $user->followings()->paginate(User::PAGINATE_COUNT);
-
         return view('users.followings', compact('users'));
     }
 
-    /**
-     * @param  User  $user
-     * @return Application|Factory|View
-     */
     public function followers(User $user)
     {
         $users = $user->followers()->paginate(User::PAGINATE_COUNT);
-
         return view('users.followers', compact('users'));
     }
 }
