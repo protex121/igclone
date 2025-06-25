@@ -1,3 +1,22 @@
+<style>
+    .avatar
+    {
+        font-size: 1rem;
+        display: inline-flex;
+        width: 48px;
+        height: 48px;
+        color: #fff;
+        border-radius: .375rem;
+        background-color: #adb5bd;
+        align-items: center;
+        justify-content: center;
+    }
+    .avatar img
+    {
+        width: 100%;
+        border-radius: .375rem;
+    }
+</style>
 <div class="card-body px-3 px-md-4 {{ request()->routeIs('posts.index') ? 'pt-0' : 'py-2 bg-white rounded-top' }}">
     <form>
         <div class="form-group mb-3">
@@ -6,7 +25,7 @@
             </label>
             <div class="d-flex justify-content-end align-items-center">
                 <img alt="{{ auth()->user()->name }}"
-                     class="avatar avatar-sm rounded-circle mr-md-3 mr-2"
+                     class="avatar avatar-sm rounded-circle mr-md-3 me-2"
                      src="{{ auth()->user()->avatar }}">
                 <textarea class="form-control commentTextarea"
                           id="comment-{{ $post->slug }}"

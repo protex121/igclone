@@ -18,7 +18,7 @@
                 <div>
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center justify-content-between">
-                            <div class="mr-2">
+                            <div class="me-2">
                                 <a href="{{ route('users.show', $post->user) }}"
                                    data-pjax>
                                     <img src="{{ $post->user->avatar }}" class="avatar rounded-circle"
