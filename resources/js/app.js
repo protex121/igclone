@@ -8,6 +8,7 @@ import 'moment';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import '../sass/app.scss';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // Create an instance of Notyf
 const notyf = new Notyf({

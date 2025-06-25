@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-9 pt-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="d-flex">
+                    <div class="d-flex align-items-center">
                         <div>
                             <div class="fs-4 fw-bolder">{{ $user->username }}</div>
                         </div>
@@ -23,11 +23,12 @@
                         @endif
 
                         @can('update', $user)
-                            <div class="ml-4">
+                            <div class="ms-2">
                                 <a href="{{ route('users.edit', $user) }}"
                                    data-pjax
-                                   class="btn btn-sm btn-secondary">
-                                    {{ __('Edit Profile') }}
+                                   class="fs-5 text-black">
+                                    {{-- {{ __('Edit Profile') }} --}}
+                                    <i class="bi bi-gear"></i>
                                 </a>
                             </div>
                         @endcan
@@ -46,21 +47,21 @@
                 </div>
 
                 <div class="d-flex mb-3">
-                    <div class="text-center"><strong>{{ $user->posts_count }}</strong> {{ __('posts') }}</div>
-                    <div class="pl-5 text-center">
+                    <div class="text-center fs-5"><strong>{{ $user->posts_count }}</strong> {{ __('posts') }}</div>
+                    <div class="ps-5 text-center">
                         @if($user->followers_count > 0)
                             <a href="{{ route('users.followers', $user->username) }}"
-                               data-pjax>
+                               data-pjax class="link-offset-2 link-underline link-underline-opacity-0 fs-5 text-black">
                                 <strong id="followersCount">{{ $user->followers_count }}</strong> {{ __('followers') }}
                             </a>
                         @else
                             <strong id="followersCount">{{ $user->followers_count }}</strong> {{ __('followers') }}
                         @endif
                     </div>
-                    <div class="pl-5 text-center">
+                    <div class="ps-5 text-center">
                         @if($user->followings_count > 0)
                             <a href="{{ route('users.followings', $user->username) }}"
-                               data-pjax>
+                               data-pjax class="link-offset-2 link-underline link-underline-opacity-0 fs-5 text-black">
                                 <strong
                                     id="followingsCount">{{ $user->followings_count }}</strong> {{ __('following') }}
                             </a>
