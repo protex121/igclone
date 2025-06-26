@@ -52,7 +52,7 @@
                                 <a href="{{ route('users.show', $user) }}"
                                    data-pjax
                                    class="avatar avatar-sm rounded-circle">
-                                    <img alt="{{ $user->name }}"
+                                    <img alt="{{ $user->name }}" style="max-width: 64px;"
                                          src="{{ $user->avatar }}">
                                 </a>
                             </div>
